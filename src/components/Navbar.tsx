@@ -1,102 +1,50 @@
 
-import { useState } from "react";
-import { Shield, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
-interface NavbarProps {
-  activeSection?: string;
-  onNavigate?: (sectionId: string) => void;
-}
-
-const Navbar = ({ activeSection = "inicio", onNavigate }: NavbarProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    { name: "Início", href: "inicio" },
-    { name: "Projetos", href: "projetos" },
-    { name: "Voluntariado", href: "voluntario" },
-    { name: "Pontos de Apoio", href: "apoio" },
-    { name: "Reportar", href: "reportar" }
-  ];
-
-  const handleNavigation = (href: string) => {
-    if (onNavigate) {
-      onNavigate(href);
-    }
-    setIsMenuOpen(false);
-  };
-
+const Navbar = () => {
   return (
-    <nav className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-to-br from-green-600 to-blue-600 p-2 rounded-lg">
-              <Shield className="h-8 w-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-gray-900">Brasil Unido</h1>
-              <p className="text-sm text-gray-600">Alerta e Prevenção</p>
-            </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div className="container">
+        <Link className="navbar-brand d-flex align-items-center" to="/">
+          <div className="brand-icon me-3">
+            <i className="fas fa-shield-alt"></i>
           </div>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
-            {menuItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => handleNavigation(item.href)}
-                className={`font-medium transition-colors duration-200 px-3 py-2 rounded-md ${
-                  activeSection === item.href
-                    ? "text-green-600 bg-green-50"
-                    : "text-gray-700 hover:text-green-600 hover:bg-green-50"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
-            <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700">
-              Emergência: 199
-            </Button>
+          <div>
+            <h5 className="mb-0 brand-title">Brasil Unido</h5>
+            <small className="text-muted">Alerta e Prevenção</small>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
-            ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
-            )}
-          </button>
+        </Link>
+        
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Início</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/projetos">Projetos</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/voluntario">Voluntariado</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/pontos-apoio">Pontos de Apoio</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/reportar">Reportar</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/sobre">Sobre</Link>
+            </li>
+          </ul>
+          <a href="tel:199" className="btn btn-emergency ms-3">
+            <i className="fas fa-phone me-1"></i>
+            Emergência: 199
+          </a>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-200 py-4">
-            <div className="flex flex-col space-y-3">
-              {menuItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavigation(item.href)}
-                  className={`font-medium py-2 px-3 rounded-md text-left transition-colors duration-200 ${
-                    activeSection === item.href
-                      ? "text-green-600 bg-green-50"
-                      : "text-gray-700 hover:text-green-600 hover:bg-green-50"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              ))}
-              <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 mt-4">
-                Emergência: 199
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );
