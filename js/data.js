@@ -1,328 +1,302 @@
-
-// Dados Mock para o Portal Brasil Unido - Prevenção a Desastres
-
-// Projetos de prevenção a desastres
+// Dados dos projetos (mock)
 const projects = [
     {
         id: 1,
-        name: "Sistema Nacional de Alertas (SNIRH)",
-        institution: "Agência Nacional de Águas e Saneamento Básico",
+        name: "Alerta Rio",
+        institution: "Prefeitura do Rio de Janeiro",
         area: "Hidrometeorológica",
         type: "Monitoramento",
-        description: "Sistema integrado de monitoramento hidrológico com estações automáticas para alertas de inundações e secas em tempo real.",
-        location: "Nacional",
-        url: "https://www.snirh.gov.br/hidroweb",
-        contact: "contato@ana.gov.br",
-        lastUpdate: "2024-05-15"
+        description: "Sistema de alerta de chuvas fortes e deslizamentos na cidade do Rio de Janeiro.",
+        location: "Rio de Janeiro, RJ",
+        url: "http://alertario.rio.rj.gov.br/",
+        contact: "contato@alertario.rio.rj.gov.br",
+        lastUpdate: "2024-01-20"
     },
     {
         id: 2,
-        name: "CEMADEN - Centro Nacional de Monitoramento",
-        institution: "Ministério da Ciência, Tecnologia e Inovação",
-        area: "Hidrometeorológica",
-        type: "Alerta",
-        description: "Monitoramento 24h de eventos hidrometeorológicos extremos com rede de pluviômetros automáticos em municípios críticos.",
-        location: "971 municípios brasileiros",
-        url: "https://www.cemaden.gov.br",
-        contact: "cemaden@cemaden.gov.br",
-        lastUpdate: "2024-05-20"
+        name: "Cemaden Educação",
+        institution: "Centro Nacional de Monitoramento e Alertas de Desastres Naturais",
+        area: "Educação",
+        type: "Educação",
+        description: "Plataforma de recursos educacionais sobre desastres naturais para escolas e comunidades.",
+        location: "Nacional",
+        url: "https://www.cemaden.gov.br/cemaden-educacao/",
+        contact: "cemaden.educacao@gmail.com",
+        lastUpdate: "2024-02-10"
     },
     {
         id: 3,
-        name: "DefesaCivil.RS - Alerta Rio Grande do Sul",
-        institution: "Defesa Civil do Estado do Rio Grande do Sul",
-        area: "Hidrometeorológica",
-        type: "Alerta",
-        description: "Sistema estadual de alertas para enchentes, vendavais e granizo com integração aos municípios gaúchos.",
-        location: "Rio Grande do Sul",
-        url: "https://www.defesacivil.rs.gov.br",
-        contact: "defesacivil@ssp.rs.gov.br",
-        lastUpdate: "2024-05-18"
+        name: "Defesa Civil de Minas Gerais",
+        institution: "Governo de Minas Gerais",
+        area: "Geológica",
+        type: "Resposta",
+        description: "Ações de resposta a emergências geológicas em Minas Gerais.",
+        location: "Minas Gerais",
+        url: "http://www.defesacivil.mg.gov.br/",
+        contact: "defesacivil@mg.gov.br",
+        lastUpdate: "2024-02-15"
     },
     {
         id: 4,
-        name: "Geo-Rio - Sistema de Alerta de Chuvas",
-        institution: "Fundação Instituto de Geotécnica do Município do Rio de Janeiro",
-        area: "Geológica",
-        type: "Monitoramento",
-        description: "Monitoramento de encostas e alertas para deslizamentos de terra na cidade do Rio de Janeiro com rede de pluviômetros.",
-        location: "Rio de Janeiro - RJ",
-        url: "https://www.rio.rj.gov.br/web/geo-rio",
-        contact: "geo-rio@pcrj.rj.gov.br",
-        lastUpdate: "2024-05-10"
-    },
-    {
-        id: 5,
-        name: "INPE Queimadas - Programa de Monitoramento",
+        name: "INPE Queimadas",
         institution: "Instituto Nacional de Pesquisas Espaciais",
         area: "Incêndios",
         type: "Monitoramento",
-        description: "Sistema de detecção de focos de calor por satélite para prevenção e combate aos incêndios florestais.",
+        description: "Monitoramento de focos de queimadas em tempo real no Brasil.",
         location: "Nacional",
-        url: "https://queimadas.dgi.inpe.br",
+        url: "http://queimadas.dgi.inpe.br/",
         contact: "queimadas@inpe.br",
-        lastUpdate: "2024-05-22"
-    },
-    {
-        id: 6,
-        name: "Rede Sismográfica Brasileira",
-        institution: "Universidade de Brasília",
-        area: "Geológica",
-        type: "Monitoramento",
-        description: "Monitoramento sísmico nacional com estações distribuídas pelo território brasileiro para detecção de terremotos.",
-        location: "Nacional",
-        url: "https://www.sismo.iag.usp.br",
-        contact: "sismo@unb.br",
-        lastUpdate: "2024-05-05"
-    },
-    {
-        id: 7,
-        name: "SP Alerta - Sistema de Alertas da Capital",
-        institution: "Prefeitura de São Paulo",
-        area: "Hidrometeorológica",
-        type: "Alerta",
-        description: "Sistema de alertas meteorológicos para a população paulistana via SMS, aplicativo e sirenes.",
-        location: "São Paulo - SP",
-        url: "https://www.saopaulo.sp.gov.br",
-        contact: "spalerta@prefeitura.sp.gov.br",
-        lastUpdate: "2024-05-12"
-    },
-    {
-        id: 8,
-        name: "Portal da Transparência de Desastres",
-        institution: "Ministério da Integração e do Desenvolvimento Regional",
-        area: "Tecnológica",
-        type: "Prevenção",
-        description: "Plataforma com dados abertos sobre reconhecimentos federais de situação de emergência e calamidade pública.",
-        location: "Nacional",
-        url: "https://s2id.mi.gov.br",
-        contact: "s2id@mdr.gov.br",
-        lastUpdate: "2024-05-08"
-    },
-    {
-        id: 9,
-        name: "PREVFOGO - Prevenção e Combate aos Incêndios",
-        institution: "Instituto Brasileiro do Meio Ambiente - IBAMA",
-        area: "Incêndios",
-        type: "Resposta",
-        description: "Sistema nacional de prevenção e combate aos incêndios florestais com brigadas especializadas.",
-        location: "Nacional",
-        url: "https://www.ibama.gov.br/prevfogo",
-        contact: "prevfogo@ibama.gov.br",
-        lastUpdate: "2024-05-14"
-    },
-    {
-        id: 10,
-        name: "Alerta Belo Horizonte",
-        institution: "Defesa Civil de Belo Horizonte",
-        area: "Hidrometeorológica",
-        type: "Alerta",
-        description: "Sistema municipal de alertas para chuvas intensas, vendavais e granizo na região metropolitana.",
-        location: "Belo Horizonte - MG",
-        url: "https://portalpbh.pbh.gov.br/pbh/ecp/comunidade.do?evento=portlet&pIdPlc=ecpTaxonomiaMenuPortal&app=defesacivil",
-        contact: "defesacivil@pbh.gov.br",
-        lastUpdate: "2024-05-16"
-    },
-    {
-        id: 11,
-        name: "Sistema de Informações Hospitalares - SIH/SUS",
-        institution: "Ministério da Saúde",
-        area: "Saúde",
-        type: "Resposta",
-        description: "Sistema de gestão de leitos e recursos hospitalares para emergências e desastres de grande escala.",
-        location: "Nacional",
-        url: "https://www.gov.br/saude",
-        contact: "sih@saude.gov.br",
-        lastUpdate: "2024-05-11"
-    },
-    {
-        id: 12,
-        name: "Educação para Redução de Riscos",
-        institution: "Universidade Federal de Santa Catarina",
-        area: "Educação",
-        type: "Educação",
-        description: "Programa de capacitação de professores e desenvolvimento de material didático sobre prevenção de desastres.",
-        location: "Santa Catarina",
-        url: "https://www.ufsc.br",
-        contact: "prevencao@ufsc.br",
-        lastUpdate: "2024-05-09"
-    }
-];
-
-// Pontos de apoio
-const supportPoints = [
-    {
-        id: 1,
-        name: "Abrigo Municipal Parque Ibirapuera",
-        type: "Abrigo",
-        address: "Av. Paulista, 1578 - Bela Vista, São Paulo - SP",
-        phone: "(11) 3111-1000",
-        capacity: "500 pessoas",
-        services: ["Dormitório", "Alimentação", "Atendimento médico", "Área infantil"],
-        coordinates: { lat: -23.587, lng: -46.656 }
-    },
-    {
-        id: 2,
-        name: "Centro de Distribuição de Doações - Zona Norte",
-        type: "Centro de Doações",
-        address: "Rua das Flores, 123 - Santana, São Paulo - SP",
-        phone: "(11) 3222-2000",
-        capacity: "2000m² de estoque",
-        services: ["Roupas", "Alimentos", "Produtos de higiene", "Medicamentos"],
-        coordinates: { lat: -23.512, lng: -46.625 }
-    },
-    {
-        id: 3,
-        name: "Base Avançada Defesa Civil RJ",
-        type: "Base da Defesa Civil",
-        address: "Av. Brasil, 4365 - Manguinhos, Rio de Janeiro - RJ",
-        phone: "(21) 2334-5000",
-        capacity: "50 agentes",
-        services: ["Resgate", "Evacuação", "Primeiros socorros", "Coordenação"],
-        coordinates: { lat: -22.876, lng: -43.244 }
-    },
-    {
-        id: 4,
-        name: "Hospital de Emergência Regional",
-        type: "Hospital",
-        address: "Rua Saldanha Marinho, 188 - Centro, Porto Alegre - RS",
-        phone: "(51) 3444-6000",
-        capacity: "200 leitos",
-        services: ["Trauma", "UTI", "Cirurgia", "Hemodiálise"],
-        coordinates: { lat: -30.027, lng: -51.229 }
+        lastUpdate: "2024-02-20"
     },
     {
         id: 5,
-        name: "Centro Comunitário de Apoio",
-        type: "Centro Comunitário",
-        address: "Rua da Paz, 456 - Savassi, Belo Horizonte - MG",
-        phone: "(31) 3555-7000",
-        capacity: "300 pessoas",
-        services: ["Reuniões", "Treinamentos", "Distribuição de kits", "Cadastramento"],
-        coordinates: { lat: -19.937, lng: -43.937 }
+        name: "Monitoramento de Barragens",
+        institution: "Agência Nacional de Águas",
+        area: "Tecnológica",
+        type: "Monitoramento",
+        description: "Sistema de monitoramento de segurança de barragens no Brasil.",
+        location: "Nacional",
+        url: "https://www.ana.gov.br/assuntos/seguranca-de-barragens",
+        contact: "segurancadebarragens@ana.gov.br",
+        lastUpdate: "2024-02-25"
     },
     {
         id: 6,
-        name: "Abrigo Temporário Governador",
-        type: "Abrigo",
-        address: "Av. Boa Viagem, 789 - Boa Viagem, Recife - PE",
-        phone: "(81) 3666-8000",
-        capacity: "400 pessoas",
-        services: ["Dormitório", "Alimentação", "Creche", "Atendimento psicológico"],
-        coordinates: { lat: -8.113, lng: -34.896 }
+        name: "Projeto Escudo",
+        institution: "Prefeitura de Santos",
+        area: "Tecnológica",
+        type: "Alerta",
+        description: "Sistema de monitoramento e alerta de riscos climáticos em Santos.",
+        location: "São Paulo",
+        url: "https://www.santos.sp.gov.br/?q=noticia&id=37167",
+        contact: null,
+        lastUpdate: "2024-03-01"
+    },
+    {
+        id: 7,
+        name: "SAMU 192",
+        institution: "Ministério da Saúde",
+        area: "Saúde",
+        type: "Resposta",
+        description: "Serviço de Atendimento Móvel de Urgência para emergências médicas.",
+        location: "Nacional",
+        url: "http://www.saude.gov.br/servicos/samu",
+        contact: null,
+        lastUpdate: "2024-03-05"
+    },
+    {
+        id: 8,
+        name: "Sistema de Alerta de Cheias",
+        institution: "CPRM",
+        area: "Hidrometeorológica",
+        type: "Alerta",
+        description: "Sistema de alerta de cheias para bacias hidrográficas brasileiras.",
+        location: "Nacional",
+        url: "https://www.cprm.gov.br/publique/Cheias/",
+        contact: null,
+        lastUpdate: "2024-03-10"
+    },
+    {
+        id: 9,
+        name: "Monitoramento de Deslizamentos",
+        institution: "IPT",
+        area: "Geológica",
+        type: "Monitoramento",
+        description: "Monitoramento de áreas de risco de deslizamento em São Paulo.",
+        location: "São Paulo",
+        url: "https://www.ipt.br/",
+        contact: null,
+        lastUpdate: "2024-03-15"
+    },
+    {
+        id: 10,
+        name: "Brigadas Escolares",
+        institution: "Corpo de Bombeiros",
+        area: "Incêndios",
+        type: "Prevenção",
+        description: "Programa de formação de brigadas escolares de combate a incêndio.",
+        location: "Nacional",
+        url: "https://www.corpodebombeiros.sp.gov.br/",
+        contact: null,
+        lastUpdate: "2024-03-20"
+    },
+    {
+        id: 11,
+        name: "Sistema de Informações sobre Desastres",
+        institution: "Ministério do Desenvolvimento Regional",
+        area: "Tecnológica",
+        type: "Monitoramento",
+        description: "Plataforma de informações sobre desastres naturais no Brasil.",
+        location: "Nacional",
+        url: "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/sistemas",
+        contact: null,
+        lastUpdate: "2024-03-25"
+    },
+    {
+        id: 12,
+        name: "Defesa Civil nas Escolas",
+        institution: "Secretaria Nacional de Proteção e Defesa Civil",
+        area: "Educação",
+        type: "Educação",
+        description: "Programa de educação sobre prevenção de desastres nas escolas.",
+        location: "Nacional",
+        url: "https://www.gov.br/mdr/pt-br/assuntos/protecao-e-defesa-civil/defesa-civil-na-escola",
+        contact: null,
+        lastUpdate: "2024-03-30"
     }
 ];
 
-// Contatos de emergência
-const emergencyContacts = [
-    {
-        service: "Defesa Civil Nacional",
-        phone: "199",
-        description: "Emergências relacionadas a desastres naturais"
-    },
-    {
-        service: "Bombeiros",
-        phone: "193",
-        description: "Incêndios, resgates e emergências gerais"
-    },
-    {
-        service: "SAMU",
-        phone: "192",
-        description: "Emergências médicas e atendimento pré-hospitalar"
-    },
-    {
-        service: "Polícia Militar",
-        phone: "190",
-        description: "Emergências de segurança pública"
-    },
-    {
-        service: "Polícia Civil",
-        phone: "197",
-        description: "Denúncias e ocorrências policiais"
-    }
-];
-
-// Dados de voluntários
-const volunteers = [
+// Pontos de apoio para emergências
+const supportPoints = [
     {
         id: 1,
-        name: "Ana Silva",
-        location: "São Paulo - SP",
-        skills: ["Primeiros Socorros", "Comunicação"],
-        areas: ["Resposta Emergencial", "Educação"],
-        availability: "Fins de Semana",
-        registrationDate: "2024-03-15"
+        name: "Centro de Emergência São Paulo",
+        type: "Defesa Civil",
+        status: "Ativo",
+        address: "Rua Líbero Badaró, 425 - Centro, São Paulo - SP",
+        phone: "(11) 3397-8500",
+        description: "Centro de coordenação de emergências da Defesa Civil de São Paulo",
+        capacity: null
     },
     {
         id: 2,
-        name: "Carlos Oliveira",
-        location: "Rio de Janeiro - RJ",
-        skills: ["Desenvolvimento Web", "Análise de Dados"],
-        areas: ["Desenvolvimento de Software", "Monitoramento"],
-        availability: "Flexível",
-        registrationDate: "2024-04-02"
+        name: "Abrigo Temporário Vila Madalena",
+        type: "Abrigo",
+        status: "Ativo",
+        address: "Rua Harmonia, 1234 - Vila Madalena, São Paulo - SP",
+        phone: "(11) 3456-7890",
+        description: "Abrigo temporário para vítimas de desastres naturais",
+        capacity: 200
     },
     {
         id: 3,
-        name: "Maria Santos",
-        location: "Belo Horizonte - MG",
-        skills: ["Coordenação", "Logística"],
-        areas: ["Apoio Logístico", "Coordenação"],
-        availability: "Período Integral",
-        registrationDate: "2024-02-28"
+        name: "Hospital de Emergência Rio",
+        type: "Hospital",
+        status: "Ativo",
+        address: "Av. Brasil, 4365 - Manguinhos, Rio de Janeiro - RJ",
+        phone: "(21) 2334-5678",
+        description: "Hospital especializado em atendimento de emergências",
+        capacity: null
+    },
+    {
+        id: 4,
+        name: "Centro de Distribuição Belo Horizonte",
+        type: "Distribuição",
+        status: "Ativo",
+        address: "Av. Afonso Pena, 1212 - Centro, Belo Horizonte - MG",
+        phone: "(31) 3274-5555",
+        description: "Centro de distribuição de suprimentos e doações",
+        capacity: null
+    },
+    {
+        id: 5,
+        name: "Quartel Bombeiros Porto Alegre",
+        type: "Bombeiros",
+        status: "Ativo",
+        address: "Rua Voluntários da Pátria, 1358 - Centro, Porto Alegre - RS",
+        phone: "(51) 3288-1234",
+        description: "Quartel central dos Bombeiros de Porto Alegre",
+        capacity: null
+    },
+    {
+        id: 6,
+        name: "Abrigo Emergencial Florianópolis",
+        type: "Abrigo",
+        status: "Lotado",
+        address: "Rua Felipe Schmidt, 515 - Centro, Florianópolis - SC",
+        phone: "(48) 3212-3456",
+        description: "Abrigo para situações de emergência climatológica",
+        capacity: 150
+    },
+    {
+        id: 7,
+        name: "Hospital Municipal de Trauma",
+        type: "Hospital",
+        status: "Emergência",
+        address: "Av. Paulista, 2001 - Bela Vista, São Paulo - SP",
+        phone: "(11) 3123-4567",
+        description: "Hospital municipal especializado em trauma e emergências",
+        capacity: null
+    },
+    {
+        id: 8,
+        name: "Centro de Triagem Brasília",
+        type: "Distribuição",
+        status: "Ativo",
+        address: "Esplanada dos Ministérios, Bloco A - Brasília - DF",
+        phone: "(61) 3445-6789",
+        description: "Centro nacional de triagem e distribuição de recursos",
+        capacity: null
+    },
+    {
+        id: 9,
+        name: "Defesa Civil Salvador",
+        type: "Defesa Civil",
+        status: "Ativo",
+        address: "Rua Chile, 23 - Pelourinho, Salvador - BA",
+        phone: "(71) 3116-7890",
+        description: "Sede da Defesa Civil de Salvador",
+        capacity: null
+    },
+    {
+        id: 10,
+        name: "Abrigo Comunitário Recife",
+        type: "Abrigo",
+        status: "Ativo",
+        address: "Rua do Bom Jesus, 163 - Recife Antigo, Recife - PE",
+        phone: "(81) 3224-5678",
+        description: "Abrigo comunitário para emergências urbanas",
+        capacity: 100
     }
 ];
 
-// Áreas de atuação disponíveis
-const availableAreas = [
-    "Monitoramento",
-    "Apoio Logístico",
-    "Comunicação",
-    "Educação",
-    "Resposta Emergencial",
-    "Desenvolvimento de Software",
-    "Primeiros Socorros",
-    "Coordenação"
+// Voluntários (dados de exemplo para demonstração)
+const volunteers = [
+    {
+        id: 1,
+        name: "Maria Silva",
+        location: "São Paulo, SP",
+        skills: ["Primeiros Socorros", "Coordenação", "Comunicação"],
+        availability: "Fins de semana",
+        experience: "intermediaria",
+        areas: ["Saúde", "Educação"]
+    },
+    {
+        id: 2,
+        name: "João Santos",
+        location: "Rio de Janeiro, RJ",
+        skills: ["Tecnologia", "Análise de Dados", "Programação"],
+        availability: "Noites",
+        experience: "avancada",
+        areas: ["Tecnológica", "Monitoramento"]
+    }
 ];
 
-// Opções de disponibilidade
+// Disponibilidades para voluntários
 const availabilityOptions = [
-    "Diurno",
-    "Noturno",
-    "Fins de Semana",
-    "Período Integral",
-    "Flexível"
+    "Manhãs",
+    "Tardes",
+    "Noites",
+    "Fins de semana",
+    "Dias úteis",
+    "Tempo integral",
+    "Conforme necessário"
 ];
 
-// Estados brasileiros
-const brazilianStates = [
-    "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal",
-    "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul",
-    "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí",
-    "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia",
-    "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"
+// Áreas de interesse para voluntários
+const volunteerAreas = [
+    { value: "hidro", label: "Eventos Hidrometeorológicos", description: "Chuvas, enchentes, secas" },
+    { value: "geo", label: "Eventos Geológicos", description: "Deslizamentos, terremotos" },
+    { value: "fire", label: "Incêndios", description: "Prevenção e combate a incêndios" },
+    { value: "tech", label: "Tecnologia", description: "Desenvolvimento e suporte técnico" },
+    { value: "health", label: "Saúde", description: "Primeiros socorros e assistência médica" },
+    { value: "edu", label: "Educação", description: "Conscientização e treinamento" },
+    { value: "logistics", label: "Logística", description: "Distribuição e coordenação" },
+    { value: "communication", label: "Comunicação", description: "Alertas e divulgação" }
 ];
 
-// Tipos de risco para reportar
-const riskTypes = [
-    {
-        category: "Hidrometeorológicos",
-        risks: ["Enchente", "Alagamento", "Deslizamento", "Vendaval", "Granizo", "Seca", "Erosão"]
-    },
-    {
-        category: "Geológicos",
-        risks: ["Deslizamento de terra", "Erosão", "Subsidência", "Terremoto"]
-    },
-    {
-        category: "Incêndios",
-        risks: ["Incêndio florestal", "Incêndio urbano", "Queimada"]
-    },
-    {
-        category: "Biológicos",
-        risks: ["Epidemia", "Praga agrícola", "Contaminação"]
-    },
-    {
-        category: "Tecnológicos",
-        risks: ["Vazamento químico", "Acidente industrial", "Contaminação", "Colapso estrutural"]
-    }
-];
+console.log('📊 Dados carregados:', {
+    projetos: projects.length,
+    pontosApoio: supportPoints.length,
+    voluntarios: volunteers.length
+});
