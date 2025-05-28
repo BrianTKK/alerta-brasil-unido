@@ -2,7 +2,11 @@
 import { ArrowRight, Shield, Users, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onNavigate?: (sectionId: string) => void;
+}
+
+const HeroSection = ({ onNavigate }: HeroSectionProps) => {
   return (
     <section className="relative py-20 px-4 overflow-hidden">
       {/* Background Pattern */}
@@ -36,6 +40,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-lg px-8 py-4"
+              onClick={() => onNavigate && onNavigate('projetos')}
             >
               Explorar Projetos
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -44,6 +49,7 @@ const HeroSection = () => {
               size="lg" 
               variant="outline"
               className="border-2 border-green-600 text-green-600 hover:bg-green-50 text-lg px-8 py-4"
+              onClick={() => onNavigate && onNavigate('voluntario')}
             >
               Seja Voluntário
               <Users className="ml-2 h-5 w-5" />

@@ -1,4 +1,3 @@
-
 // Mock data for projects and support points based on Brazilian disaster prevention initiatives
 
 export const projects = [
@@ -172,7 +171,7 @@ export const supportPoints = [
   {
     id: 3,
     name: "Base Avançada Defesa Civil RJ",
-    type: "Base de Operações",
+    type: "Base da Defesa Civil",
     address: "Av. Brasil, 4365 - Manguinhos, Rio de Janeiro - RJ",
     phone: "(21) 2334-5000",
     capacity: "50 agentes",
@@ -182,7 +181,7 @@ export const supportPoints = [
   {
     id: 4,
     name: "Hospital de Emergência Regional",
-    type: "Unidade de Saúde",
+    type: "Hospital",
     address: "Rua Saldanha Marinho, 188 - Centro, Porto Alegre - RS",
     phone: "(51) 3444-6000",
     capacity: "200 leitos",
@@ -208,6 +207,96 @@ export const supportPoints = [
     capacity: "400 pessoas",
     services: ["Dormitório", "Alimentação", "Creche", "Atendimento psicológico"],
     coordinates: { lat: -8.113, lng: -34.896 }
+  },
+  {
+    id: 7,
+    name: "Centro de Doações Várzea Grande",
+    type: "Centro de Doações",
+    address: "Av. da Independência, 2500 - Centro, Várzea Grande - MT",
+    phone: "(65) 3688-9000",
+    capacity: "1500m² de estoque",
+    services: ["Roupas", "Calçados", "Utensílios domésticos", "Brinquedos"],
+    coordinates: { lat: -15.647, lng: -56.132 }
+  },
+  {
+    id: 8,
+    name: "Base da Defesa Civil de Cuiabá",
+    type: "Base da Defesa Civil",
+    address: "Rua Barão de Melgaço, 3390 - Centro Sul, Cuiabá - MT",
+    phone: "(65) 3617-1199",
+    capacity: "40 agentes",
+    services: ["Monitoramento", "Alertas", "Evacuação", "Apoio logístico"],
+    coordinates: { lat: -15.601, lng: -56.097 }
+  },
+  {
+    id: 9,
+    name: "Hospital Municipal de Emergência",
+    type: "Hospital",
+    address: "Rua General Osório, 1000 - Centro, Florianópolis - SC",
+    phone: "(48) 3251-9000",
+    capacity: "150 leitos",
+    services: ["Emergência", "Pronto socorro", "Raio-X", "Laboratório"],
+    coordinates: { lat: -27.594, lng: -48.548 }
+  },
+  {
+    id: 10,
+    name: "Abrigo Emergencial Zona Sul",
+    type: "Abrigo",
+    address: "Rua das Palmeiras, 567 - Ipanema, Rio de Janeiro - RJ",
+    phone: "(21) 2247-8000",
+    capacity: "350 pessoas",
+    services: ["Dormitório", "Alimentação", "Atendimento social", "Wi-Fi"],
+    coordinates: { lat: -22.984, lng: -43.204 }
+  },
+  {
+    id: 11,
+    name: "Centro de Apoio Comunitário Salvador",
+    type: "Centro Comunitário",
+    address: "Av. Sete de Setembro, 3456 - Vitória, Salvador - BA",
+    phone: "(71) 3117-5000",
+    capacity: "250 pessoas",
+    services: ["Orientação jurídica", "Apoio psicológico", "Cursos", "Informações"],
+    coordinates: { lat: -12.973, lng: -38.501 }
+  },
+  {
+    id: 12,
+    name: "Hospital Regional de Brasília",
+    type: "Hospital",
+    address: "SMHN Quadra 101 - Asa Norte, Brasília - DF",
+    phone: "(61) 3225-5000",
+    capacity: "300 leitos",
+    services: ["Emergência", "UTI", "Centro cirúrgico", "Maternidade"],
+    coordinates: { lat: -15.794, lng: -47.882 }
+  },
+  {
+    id: 13,
+    name: "Centro de Distribuição Manaus",
+    type: "Centro de Doações",
+    address: "Av. Eduardo Ribeiro, 1200 - Centro, Manaus - AM",
+    phone: "(92) 3232-7000",
+    capacity: "1800m² de estoque",
+    services: ["Alimentos não perecíveis", "Água potável", "Medicamentos básicos", "Materiais de construção"],
+    coordinates: { lat: -3.119, lng: -60.021 }
+  },
+  {
+    id: 14,
+    name: "Base da Defesa Civil Fortaleza",
+    type: "Base da Defesa Civil",
+    address: "Rua Senador Pompeu, 350 - Centro, Fortaleza - CE",
+    phone: "(85) 3101-1500",
+    capacity: "60 agentes",
+    services: ["Prevenção", "Resposta", "Monitoramento climático", "Educação"],
+    coordinates: { lat: -3.731, lng: -38.526 }
+  },
+  {
+    id: 15,
+    name: "Abrigo Municipal de Goiânia",
+    type: "Abrigo",
+    address: "Av. Anhanguera, 5000 - Setor Central, Goiânia - GO",
+    phone: "(62) 3524-8000",
+    capacity: "450 pessoas",
+    services: ["Acolhimento", "Alimentação", "Atividades recreativas", "Suporte médico"],
+    coordinates: { lat: -16.686, lng: -49.264 }
   }
 ];
 

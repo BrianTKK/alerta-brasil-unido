@@ -47,10 +47,11 @@ const VolunteerSection = () => {
     console.log("Volunteer data:", formData);
   };
 
-  const handleAreaChange = (area: string, checked: boolean) => {
+  const handleAreaChange = (area: string, checked: boolean | string) => {
+    const isChecked = checked === true;
     setFormData(prev => ({
       ...prev,
-      areas: checked 
+      areas: isChecked 
         ? [...prev.areas, area]
         : prev.areas.filter(a => a !== area)
     }));
@@ -197,7 +198,7 @@ const VolunteerSection = () => {
                       <label key={area} className="flex items-center space-x-2">
                         <Checkbox
                           checked={formData.areas.includes(area)}
-                          onCheckedChange={(checked) => handleAreaChange(area, checked)}
+                          onCheckedChange={(checked) => handleAreaChange(area, checked as boolean)}
                         />
                         <span className="text-sm">{area}</span>
                       </label>

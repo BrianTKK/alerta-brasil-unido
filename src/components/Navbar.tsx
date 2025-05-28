@@ -3,17 +3,28 @@ import { useState } from "react";
 import { Shield, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const Navbar = () => {
+interface NavbarProps {
+  activeSection?: string;
+  onNavigate?: (sectionId: string) => void;
+}
+
+const Navbar = ({ activeSection = "inicio", onNavigate }: NavbarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: "Início", href: "#" },
-    { name: "Projetos", href: "#projetos" },
-    { name: "Voluntariado", href: "#voluntario" },
-    { name: "Pontos de Apoio", href: "#apoio" },
-    { name: "Recursos", href: "#recursos" },
-    { name: "Contato", href: "#contato" }
+    { name: "Início", href: "inicio" },
+    { name: "Projetos", href: "projetos" },
+    { name: "Voluntariado", href: "voluntario" },
+    { name: "Pontos de Apoio", href: "apoio" },
+    { name: "Reportar", href: "reportar" }
   ];
+
+  const handleNavigation = (href: string) => {
+    if (onNavigate) {
+      onNavigate(href);
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
@@ -33,16 +44,20 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-green-600 font-medium transition-colors duration-200"
+                onClick={() => handleNavigation(item.href)}
+                className={`font-medium transition-colors duration-200 px-3 py-2 rounded-md ${
+                  activeSection === item.href
+                    ? "text-green-600 bg-green-50"
+                    : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                }`}
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
-              Emergência
+            <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700">
+              Emergência: 199
             </Button>
           </div>
 
@@ -64,17 +79,20 @@ const Navbar = () => {
           <div className="md:hidden border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-3">
               {menuItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-green-600 font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavigation(item.href)}
+                  className={`font-medium py-2 px-3 rounded-md text-left transition-colors duration-200 ${
+                    activeSection === item.href
+                      ? "text-green-600 bg-green-50"
+                      : "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                  }`}
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
-              <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-4">
-                Emergência
+              <Button className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 mt-4">
+                Emergência: 199
               </Button>
             </div>
           </div>
